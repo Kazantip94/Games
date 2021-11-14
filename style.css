@@ -1,0 +1,614 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.woff2") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: wrap;
+}
+@font-face {
+    font-family: "Pathway Gothic One";
+    src: url("../fonts/PathwayGothicOne-Regular.woff") format("woff"), url("../fonts/PathwayGothicOne-Regular.woff2") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: wrap;
+}
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: wrap;
+}
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+h1,
+h2,
+h3 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #fff;
+    font-family: "Pathway Gothic One", sans-serif;
+}
+
+
+.header {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000000;
+    opacity: 0.5;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.23);
+    padding: 20px 80px;
+}
+/* .menu__search {
+    margin-right: 33.8%;
+} */
+.menu__block {
+    display: flex;
+    align-items: center;
+    /* margin-left: 27.12%; */
+}
+.menu__account {
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-right: 37.5px;
+}
+.nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav ul li:nth-child(2) {
+    margin-left: 55px;
+}
+.nav ul li:nth-child(4) {
+    margin-right: 55px;
+}
+.nav__item {
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.nav__logo {
+    margin: 0 75px;
+}
+
+/* //бургер */
+.burger-menu {
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
+.burger-menu__block {
+    background: #000;
+    opacity: 0.5;
+    box-shadow: 0px 10px 20px rgb(0 0 0 / 23%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    z-index: 50;
+}
+.burger-menu__button {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 30px;
+    height: 19px;
+    transition: 0.4s;
+}
+.burger-menu__lines {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+.burger-menu__lines::after {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+.burger-menu__lines::before {   
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+.burger-menu__lines {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.burger-menu__lines::before {
+    content: '';
+    top: -10px;
+}
+.burger-menu__lines::after {
+    content: '';
+    top: 10px;
+}
+.burger-menu__active .burger-menu__lines {
+    background-color: transparent;
+}
+.burger-menu__active .burger-menu__lines::before {
+    background-color: transparent;
+}
+.burger-menu__active .burger-menu__lines::after {
+    background-color: transparent;
+}
+.burger-menu__nav {
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    flex-flow: column;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    overflow-y: auto;
+    left: -100%;
+    transition: 0.4s;
+}
+.burger-menu__nav .burger-menu__link:nth-child(2) {
+    margin-top: 40px;
+}
+.burger-menu__nav .burger-menu__block {
+    opacity: 1;
+}
+.burger-menu__active .burger-menu__nav {
+    left: 0;
+}
+.burger-menu__link {
+    margin: 0 0 15px 15px;
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.burger-menu__link:hover {
+    transition: 150ms ease-in;
+    color: #fff;
+}
+.burger-menu__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+.burger-menu__active .burger-menu__overlay {
+    display: block;
+}
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 55;
+}
+.close {
+    padding: 0;
+    height: 24px;
+    width: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* section hero */
+.hero {
+    height: 100vh;
+}
+.swiper {
+    height: 100vh;
+}
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.swiper-slide__one {
+    background: url('../img/hero/first-slide.jpg') no-repeat center/cover;
+}
+.swiper-slide__two {
+    background: url('../img/hero/second-slide.jpg') no-repeat center/cover;
+}
+.swiper-slide__third {
+    background: url('../img/hero/third-slide.jpg') no-repeat center/cover;
+}
+.swiper-slide__block {
+    position: relative;
+    top: -27%;
+    left: 74px;
+    max-width: 766px;
+}
+.swiper-slide__toptitle {
+    font-family: "Open Sans Bold";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #E8E8E8;
+}
+.swiper-slide__title {
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 82px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    max-width: 766px;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+}
+.swiper-slide__title::before {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: -65px;
+    height: 75px;
+    background: #fff;
+    border: 1px solid #fff;
+    transform: rotate(90deg)
+}
+.swiper-slide__btn {
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #FFFFFF; 
+    display: block;
+    padding: 8px 0 11px 0;
+    max-width: 200px;
+    width: 100%;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+}
+.swiper-slide__btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+.swiper .swiper-pagination {
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    opacity: 0.5;
+}
+.swiper .swiper-pagination-bullet-active {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    opacity: 1;
+}
+
+/* section best */
+
+.best{
+    padding: 100px 75px;
+    height: 100%;
+    width: 100%;
+}
+.best__tabs {
+    display: flex;  
+    flex-direction: column;
+    position: relative;
+}
+.best__tabs-nav {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: absolute;
+    bottom: 69.317%;
+    left: 0;
+}
+.best__tabs-btn {
+    background-color: #fff;
+    padding: 8px 12px;
+    border: 2px solid #0F0F0F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: "Open Sans Bold";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: #0F0F0F;
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
+    opacity: 0.3;
+    cursor: pointer;
+}
+.best__tabs-btn::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin: 0 8px 0 0;
+    background: url("../img/best/icon-gamepad.svg");
+}
+.best__tabs-btn:nth-child(2):before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin: 0 8px 0 0;
+    background: url("../img/best/icon-story.svg");
+}
+.best__tabs-btn:nth-child(3):before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin: 0 8px 0 0;
+    background: url("../img/best/icon-room.svg");
+}
+.best__tabs-btn.active {
+    opacity: 1;
+}
+.best__tabs-content {
+    display: flex;
+    justify-content: center;
+}
+.best__tabs-item {
+    display: none;
+    width: 100%;
+}
+.best__tabs-item.active{
+    display: block;
+}
+.best__tabs-block {
+    display: flex;
+    align-items: flex-start;
+}
+.best__tabs-description {
+    margin-bottom: 8.35%;
+    align-self: flex-end;
+    max-width: 42.37%;
+    width: 100%;
+    padding-right: 10px;
+}
+.best__tabs-title {
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #0F0F0F;
+}
+.best__tabs-text {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #121212;
+    margin-top: 2.539%;
+    margin-bottom: 5.079%;
+    max-width: 503px;
+    width: 100%;
+}
+.best__tabs-button {
+    font-family: "Pathway Gothic One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: block;
+    background: linear-gradient(95.46deg, #5B0385 -21.48%, #830047 120.81%);
+    border-radius: 5px;
+    max-width: 200px;
+    width: 100%;
+    padding: 8px 0 11px 0;
+    text-align: center;
+}
+.best__tabs-button:hover {
+    color: #E3B873;
+}
+.best__tabs-img {
+    width: 57.93%;
+}
+.best__tabs-img img {
+    width: 100%;
+}
+
+/* media */
+
+@media screen and ( max-height:  800px) {
+    .swiper-slide__block {
+        top: -15%;
+    }    
+}
+@media screen and ( max-width:  1600px) {
+    .best__tabs-description {
+        margin-bottom: 4.35%;
+    }
+}
+@media screen and ( max-width:  1300px) {
+     .menu {
+         padding: 20px 50px;
+     }
+     .nav__logo {
+         margin: 0 45px;
+     }
+     .nav ul li:nth-child(2) {
+         margin-left: 30px;
+     }
+     .nav ul li:nth-child(4) {
+         margin-right: 30px;
+     }
+     .menu__account {
+         margin-right: 20px;
+     }
+     .best {
+         padding: 70px 50px;
+     }
+     .best__tabs-nav {
+         bottom: 84%;
+     }
+     .best__tabs-description {
+         margin-bottom: 1.5%;
+     }
+    .best__tabs-img {
+        display: none;
+    }
+    .best__tabs-block {
+        height: 304px;
+    }
+    .best__tabs-description {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+    .best__tabs-text {
+        margin-top: 16px;
+        margin-bottom: 24px;
+    } 
+}
+@media screen and ( max-width:  1024px) {
+    .menu {
+        display: none;
+    }
+    .burger-menu {
+        display: block;
+    }
+    .nav__logo {
+        width: 40px;
+        height: 40px;
+    }
+    .menu__cart {
+        height: 35px;
+        width: 35px;
+    } 
+}
+@media screen and ( max-width:  850px) {
+    .swiper-slide__title {
+        font-size: 61px;
+        max-width: 500px;
+        width: 100%;
+    }
+    .swiper-slide__title::before {
+        top: -10px;
+    }
+    .swiper-slide__btn {
+        font-size: 24px;
+    }
+}
+@media screen and ( max-width:  600px) {
+    .swiper-slide__toptitle {
+        font-size: 12px;
+    }
+    .swiper-slide__title {
+        font-size: 36px;
+        max-width: 318px;
+    }
+    .swiper-slide__block {
+        left: 20px;
+    }
+    .swiper-slide__title::before {
+        left: -50px;
+        top: -15px;
+    }
+    .swiper .swiper-pagination {
+        display: none;
+    }
+    .best {
+        padding: 60px 15px;
+    }
+    .best__tabs-title {
+        font-size: 32px;
+    }
+    .best__tabs-description {
+        margin: 0;
+        padding: 0;
+        max-width: 343px;
+    }
+    .best__tabs-nav {
+        overflow-x: auto;
+    }
+    .best__tabs-nav::-webkit-scrollbar {
+        width: 0;
+    }
+    .best__tabs-btn {
+        height: 40px;
+        min-width: 123px;
+    }
+    .best__tabs-btn:nth-child(2) {
+        height: 40px;
+        min-width: 136px;
+    }
+    .best__tabs-btn:nth-child(3) {
+        height: 40px;
+        min-width: 162px;
+    }
+    
+}
+
