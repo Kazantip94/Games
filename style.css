@@ -1,20 +1,20 @@
 @font-face {
     font-family: "Open Sans";
-    src: url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.woff2") format("woff");
+    src: url("./fonts/OpenSans-Regular.woff") format("woff"), url("./fonts/OpenSans-Regular.woff2") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: wrap;
 }
 @font-face {
     font-family: "Pathway Gothic One";
-    src: url("../fonts/PathwayGothicOne-Regular.woff") format("woff"), url("../fonts/PathwayGothicOne-Regular.woff2") format("woff");
+    src: url("./fonts/PathwayGothicOne-Regular.woff") format("woff"), url("./fonts/PathwayGothicOne-Regular.woff2") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: wrap;
 }
 @font-face {
     font-family: "Open Sans Bold";
-    src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff");
+    src: url("./fonts/OpenSans-Bold.woff") format("woff"), url("./fonts/OpenSans-Bold.woff2") format("woff");
     font-weight: bold;
     font-style: normal;
     font-display: wrap;
@@ -262,13 +262,13 @@ body {
     justify-content: flex-end;
 }
 .swiper-slide__one {
-    background: url('../img/hero/first-slide.jpg') no-repeat center/cover;
+    background: url('./img/hero/first-slide.jpg') no-repeat center/cover;
 }
 .swiper-slide__two {
-    background: url('../img/hero/second-slide.jpg') no-repeat center/cover;
+    background: url('./img/hero/second-slide.jpg') no-repeat center/cover;
 }
 .swiper-slide__third {
-    background: url('../img/hero/third-slide.jpg') no-repeat center/cover;
+    background: url('./img/hero/third-slide.jpg') no-repeat center/cover;
 }
 .swiper-slide__block {
     position: relative;
@@ -392,21 +392,21 @@ body {
     width: 24px;
     height: 24px;
     margin: 0 8px 0 0;
-    background: url("../img/best/icon-gamepad.svg");
+    background: url("./img/best/icon-gamepad.svg");
 }
 .best__tabs-btn:nth-child(2):before {
     content: "";
     width: 24px;
     height: 24px;
     margin: 0 8px 0 0;
-    background: url("../img/best/icon-story.svg");
+    background: url("./img/best/icon-story.svg");
 }
 .best__tabs-btn:nth-child(3):before {
     content: "";
     width: 24px;
     height: 24px;
     margin: 0 8px 0 0;
-    background: url("../img/best/icon-room.svg");
+    background: url("./img/best/icon-room.svg");
 }
 .best__tabs-btn.active {
     opacity: 1;
